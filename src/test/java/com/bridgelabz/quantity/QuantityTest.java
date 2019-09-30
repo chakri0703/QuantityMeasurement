@@ -26,6 +26,14 @@ public class LengthTest {
         }
 
         @Test
+        void givenOneAndOneFeet_WhenCheckEquals_ThenShouldBeEqual() {
+            Length zero = new Length(1, Unit.feet);
+            Length one = new Length(1, Unit.feet);
+            assertTrue(zero.equals(one));
+
+        }
+
+        @Test
         void givenZeroAndNull_WhenCheckEquals_ThenShouldNotBeEqual() {
             Length zero = new Length(0, Unit.feet);
             assertFalse(zero.equals(null));
