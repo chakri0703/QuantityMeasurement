@@ -11,6 +11,7 @@ public class Quantity {
     public static Quantity createInch(double value){
         return new Quantity(value,Unit.inch);
     }
+
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
