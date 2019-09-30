@@ -46,7 +46,11 @@ public class Quantity {
             return false;
         }
 
-        if (this.unit == Unit.feet && other.unit == Unit.gallon) {
+        if ((this.unit == Unit.feet && other.unit == Unit.gallon) || this.unit == Unit.gallon && other.unit == Unit.feet) {
+            return false;
+        }
+
+        if ((this.unit == Unit.gallon && other.unit == Unit.inch) || (this.unit == Unit.inch && other.unit == Unit.gallon)) {
             return false;
         }
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
@@ -62,7 +66,7 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
-        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard)&&(another.unit==Unit.inch||another.unit==Unit.feet||another.unit==Unit.yard)) {
+        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard) && (another.unit == Unit.inch || another.unit == Unit.feet || another.unit == Unit.yard)) {
             return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
         }
         return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
