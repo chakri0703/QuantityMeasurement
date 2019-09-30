@@ -8,7 +8,6 @@ public enum Unit {
     gallon(3.78),
     litre(1);
 
-
     private final double conversionFactor;
 
     Unit(double conversionFactor) {

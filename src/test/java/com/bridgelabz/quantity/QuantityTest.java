@@ -340,7 +340,7 @@ public class QuantityTest {
     }
 
     @Nested
-    class EqualityTestVolumeAndLength {
+    class VolumeAndLengthEqualityTest {
         @Test
         void givenOneGallonAndOneFeet_WhenCompare_ThenShouldTheyAreNotEqual() {
             Quantity oneFeet = createFoot(1.0);
@@ -382,6 +382,17 @@ public class QuantityTest {
         }
     }
 
+    @Nested
+    class VolumeAndLengthAddTest{
 
+        @Test
+        void givenOneFeetAndOneLitre_WhenAdd_ThenShouldThrowException(){
+            Quantity oneFeet=createFoot(1.0);
+            Quantity oneLitre=createLitre(1.0);
 
+            assertThrows(IllegalArgumentException.class,()->{
+                oneFeet.add(oneLitre);
+            });
+        }
+    }
 }
