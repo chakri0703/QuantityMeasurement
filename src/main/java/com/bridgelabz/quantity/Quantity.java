@@ -61,10 +61,7 @@ public class Quantity {
         if(Unit.getBaseUnit(unit)!=Unit.getBaseUnit(other.unit)){
             throw new IllegalArgumentException("Illegal Units");
         }
-        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard) && (other.unit == Unit.inch || other.unit == Unit.feet || other.unit == Unit.yard)) {
-            return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.inch);
-        }
-        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.litre);
+        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.getBaseUnit(unit));
     }
 }
 
