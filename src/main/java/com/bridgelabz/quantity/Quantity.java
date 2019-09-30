@@ -39,9 +39,18 @@ public class Quantity {
         if (!(object instanceof Quantity)) {
             return false;
         }
-
         Quantity other = (Quantity) object;
 
+        if (this.unit==Unit.inch&&other.unit==Unit.litre){
+            return false;
+        }
+
+        if (this.unit==Unit.feet&&other.unit==Unit.gallon){
+            return false;
+        }
+        if (this.unit==Unit.feet&&other.unit==Unit.litre){
+            return false;
+        }
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }
