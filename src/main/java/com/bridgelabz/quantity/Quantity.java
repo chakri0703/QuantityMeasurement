@@ -8,23 +8,24 @@ public class Quantity {
         return new Quantity(value, Unit.feet);
     }
 
-    public static Quantity createInch(double value){
-        return new Quantity(value,Unit.inch);
+    public static Quantity createInch(double value) {
+        return new Quantity(value, Unit.inch);
     }
 
-    public static Quantity createYard(double value){
-        return new Quantity(value,Unit.yard);
+    public static Quantity createYard(double value) {
+        return new Quantity(value, Unit.yard);
     }
 
-    public static Quantity createLitre(double value){
-        return  new Quantity(value,Unit.litre);
+    public static Quantity createLitre(double value) {
+        return new Quantity(value, Unit.litre);
     }
 
 
-    public static Quantity createGallon(double value){
-        return new Quantity(value,Unit.gallon);
+    public static Quantity createGallon(double value) {
+        return new Quantity(value, Unit.gallon);
     }
-    public Quantity(double value, Unit unit) {
+
+    private Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -41,14 +42,11 @@ public class Quantity {
         }
         Quantity other = (Quantity) object;
 
-        if (this.unit==Unit.inch&&other.unit==Unit.litre){
+        if ((this.unit == Unit.inch && other.unit == Unit.litre) || (this.unit == Unit.litre && other.unit == Unit.inch)) {
             return false;
         }
 
-        if (this.unit==Unit.feet&&other.unit==Unit.gallon){
-            return false;
-        }
-        if (this.unit==Unit.feet&&other.unit==Unit.litre){
+        if (this.unit == Unit.feet && other.unit == Unit.gallon) {
             return false;
         }
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
@@ -64,9 +62,10 @@ public class Quantity {
     }
 
     public Quantity add(Quantity another) {
-
-        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard)&&(another.unit==Unit.inch||another.unit==Unit.feet||another.unit==Unit.yard)) {
+            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+        }
+        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
     }
 }
-
 

@@ -65,42 +65,42 @@ public class QuantityTest {
 
         @Test
         void givenZeroInchAndZeoInch_WhenEquals_ThenShouldBeEqual() {
-            Quantity zeroInchOne = Quantity.createInch(0.0);
-            Quantity zeroInchTwo = Quantity.createInch(0.0);
+            Quantity zeroInchOne = createInch(0.0);
+            Quantity zeroInchTwo = createInch(0.0);
             assertEquals(zeroInchOne, zeroInchTwo);
         }
 
         @Test
         void givenOneInchAndOneInch_WhenCompare_ThenShouldBeEqual() {
-            Quantity oneInchOne = Quantity.createInch(1.0);
-            Quantity oneInchTwo = Quantity.createInch(1.0);
+            Quantity oneInchOne = createInch(1.0);
+            Quantity oneInchTwo = createInch(1.0);
             assertEquals(oneInchOne, oneInchTwo);
         }
 
         @Test
         void givenOneInchAndTwoInch_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneInch = Quantity.createInch(1.0);
-            Quantity twoInch = Quantity.createInch(2.0);
+            Quantity oneInch = createInch(1.0);
+            Quantity twoInch = createInch(2.0);
             assertNotEquals(oneInch, twoInch);
         }
 
         @Test
         void givenOneInchAndString_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
             String dummyString = "TDD";
             assertNotEquals(oneInch, dummyString);
         }
 
         @Test
         void givenOneInchAndNull_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
             Quantity nullObject = null;
             assertNotEquals(oneInch, nullObject);
         }
 
         @Test
         void givenSameInchObejct_WhenCompare_ThenShouldBeEqual() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
 
             assertEquals(oneInch, oneInch);
         }
@@ -111,7 +111,7 @@ public class QuantityTest {
     class InchFeetEqualityTest {
         @Test
         void givenOneInchAndOneFeet_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
             Quantity oneFeet = createFoot(1.0);
 
             assertNotEquals(oneInch, oneFeet);
@@ -119,7 +119,7 @@ public class QuantityTest {
 
         @Test
         void givenZeroInchAndZeroFeet_WhenCompare_ThenShouldBeEqual() {
-            Quantity zeroInch = Quantity.createInch(0.0);
+            Quantity zeroInch = createInch(0.0);
             Quantity zeroFeet = createFoot(0.0);
 
             assertEquals(zeroInch, zeroFeet);
@@ -127,7 +127,7 @@ public class QuantityTest {
 
         @Test
         void givenZeroInchAndOneFeet_WhenCompare_ThenNOtShouldBeEqual() {
-            Quantity zeroInch = Quantity.createInch(0.0);
+            Quantity zeroInch = createInch(0.0);
             Quantity oneFeet = createFoot(1.0);
 
             assertNotEquals(zeroInch, oneFeet);
@@ -136,14 +136,14 @@ public class QuantityTest {
         @Test
         void givenOneFeetAndTwelveInch_WhenCompare_ThenShouldBeEqual() {
             Quantity oneFeet = createFoot(1.0);
-            Quantity twelveInch = Quantity.createInch(12.0);
+            Quantity twelveInch = createInch(12.0);
 
             assertEquals(oneFeet, twelveInch);
         }
 
         @Test
         void giventwelveInchAndOneFeet_WhenCompare_ThenShouldBeEqual() {
-            Quantity twelveInch = Quantity.createInch(12.0);
+            Quantity twelveInch = createInch(12.0);
             Quantity oneFeet = createFoot(1.0);
 
             assertEquals(twelveInch, oneFeet);
@@ -154,16 +154,16 @@ public class QuantityTest {
     class YardTest {
         @Test
         void givenOneYardAndOneYard_WhenCompare_ThenShouldBeEqual() {
-            Quantity twelveInch = Quantity.createYard(1.0);
-            Quantity oneFeet = Quantity.createYard(1.0);
+            Quantity twelveInch = createYard(1.0);
+            Quantity oneFeet = createYard(1.0);
 
             assertEquals(twelveInch, oneFeet);
         }
 
         @Test
         void givenOneYardAndTwoYard_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity twoYard = Quantity.createYard(2.0);
-            Quantity oneYard = Quantity.createYard(1.0);
+            Quantity twoYard = createYard(2.0);
+            Quantity oneYard = createYard(1.0);
 
             assertNotEquals(twoYard, oneYard);
         }
@@ -173,7 +173,7 @@ public class QuantityTest {
     class YardFeetEqualityTest {
         @Test
         void givenOneYardAndThreeFeet_WhenCompare_ThenShouldBeEqual() {
-            Quantity oneYard = Quantity.createYard(1.0);
+            Quantity oneYard = createYard(1.0);
             Quantity threeFeet = createFoot(3.0);
 
             assertEquals(oneYard, threeFeet);
@@ -181,7 +181,7 @@ public class QuantityTest {
 
         @Test
         void givenOneYardAndSixFeet_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneYard = Quantity.createYard(1.0);
+            Quantity oneYard = createYard(1.0);
             Quantity sixFeet = createFoot(6.0);
 
             assertNotEquals(oneYard, sixFeet);
@@ -192,26 +192,26 @@ public class QuantityTest {
     class YardInchEqualityTest {
         @Test
         void givenOneYardAndThirtySixInch_WhenCompare_ThenShouldBeEqual() {
-            Quantity oneYard = Quantity.createYard(1.0);
-            Quantity thirtySixFeet = Quantity.createInch(36.0);
+            Quantity oneYard = createYard(1.0);
+            Quantity thirtySixFeet = createInch(36.0);
 
             assertEquals(oneYard, thirtySixFeet);
         }
 
         @Test
         void givenOneYardAndSixInch_WhenCompare_ThenShouldNotBeEqual() {
-            Quantity oneYard = Quantity.createYard(1.0);
-            Quantity sixInch = Quantity.createInch(6.0);
+            Quantity oneYard = createYard(1.0);
+            Quantity sixInch = createInch(6.0);
 
             assertNotEquals(oneYard, sixInch);
         }
 
         @Test
         void givenTwoZeroInch_WhenAdd_ThenShouldAdd() {
-            Quantity zeroInch = Quantity.createInch(0.0);
-            Quantity anotherZero = Quantity.createInch(0.0);
+            Quantity zeroInch = createInch(0.0);
+            Quantity anotherZero = createInch(0.0);
 
-            assertEquals(Quantity.createInch(0.0), zeroInch.add(anotherZero));
+            assertEquals(createInch(0.0), zeroInch.add(anotherZero));
         }
     }
 
@@ -221,18 +221,18 @@ public class QuantityTest {
 
         @Test
         void givenZeroInchAndOneInch_WhenAdd_ThenShouldAdd() {
-            Quantity zeroInch = Quantity.createInch(0.0);
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity zeroInch = createInch(0.0);
+            Quantity oneInch = createInch(1.0);
 
-            assertEquals(Quantity.createInch(1.0), zeroInch.add(oneInch));
+            assertEquals(createInch(1.0), zeroInch.add(oneInch));
         }
 
         @Test
         void givenOneInchAndOneInch_WhenAdd_ThenShouldAdd() {
-            Quantity zeroInch = Quantity.createInch(1.0);
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity zeroInch = createInch(1.0);
+            Quantity oneInch = createInch(1.0);
 
-            assertEquals(Quantity.createInch(2.0), zeroInch.add(oneInch));
+            assertEquals(createInch(2.0), zeroInch.add(oneInch));
         }
     }
 
@@ -241,18 +241,18 @@ public class QuantityTest {
     class AddInchAndFeetTest {
         @Test
         void givenOneFeetAndOneInch_WhenAdd_ThenShouldAdd() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
             Quantity oneFeet = createFoot(1.0);
 
-            assertEquals(Quantity.createInch(13.0), oneFeet.add(oneInch));
+            assertEquals(createInch(13.0), oneFeet.add(oneInch));
         }
 
         @Test
         void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
-            Quantity oneInch = Quantity.createInch(1.0);
+            Quantity oneInch = createInch(1.0);
             Quantity oneFeet = createFoot(1);
 
-            assertEquals(Quantity.createInch(13.0), oneInch.add(oneFeet));
+            assertEquals(createInch(13.0), oneInch.add(oneFeet));
         }
     }
 
@@ -285,8 +285,8 @@ public class QuantityTest {
         @Test
         void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
 
-            Quantity oneLitre = Quantity.createLitre(1.0);
-            Quantity anotherOneLitre = Quantity.createLitre(1.0);
+            Quantity oneLitre = createLitre(1.0);
+            Quantity anotherOneLitre = createLitre(1.0);
 
             assertEquals(oneLitre, anotherOneLitre);
         }
@@ -298,7 +298,7 @@ public class QuantityTest {
         void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
 
             Quantity oneGallon = createGallon(1.0);
-            Quantity ThreeDotSevenEightLitre = Quantity.createLitre(3.78);
+            Quantity ThreeDotSevenEightLitre = createLitre(3.78);
 
             assertEquals(oneGallon, ThreeDotSevenEightLitre);
         }
@@ -321,21 +321,21 @@ public class QuantityTest {
         @Test
         void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
 
-            Quantity oneLitre = Quantity.createLitre(1.0);
-            Quantity anotherLitre = Quantity.createLitre(1.0);
+            Quantity oneLitre = createLitre(1.0);
+            Quantity anotherLitre = createLitre(1.0);
 
 
-            assertEquals(Quantity.createLitre(2.0), oneLitre.add(anotherLitre));
+            assertEquals(createLitre(2.0), oneLitre.add(anotherLitre));
         }
 
         @Test
         void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
 
-            Quantity oneLitre = Quantity.createLitre(1.0);
+            Quantity oneLitre = createLitre(1.0);
             Quantity oneGallon = createGallon(1.0);
 
 
-            assertEquals(Quantity.createLitre(4.78), oneLitre.add(oneGallon));
+            assertEquals(createLitre(4.78), oneLitre.add(oneGallon));
         }
     }
 
@@ -350,7 +350,7 @@ public class QuantityTest {
         }
 
         @Test
-        void givenOneFeetAndOneLitre_WhenCompare_ThenShouldTheyAreNOtEqual(){
+        void givenOneInchAndOneLitre_WhenCompare_ThenShouldTheyAreNOtEqual(){
             Quantity oneInch=createInch(1.0);
             Quantity oneLitre=createLitre(1.0);
 
@@ -358,26 +358,30 @@ public class QuantityTest {
         }
 
         @Test
-        void givenOneInchAndOneGallonThenShouldNotEqual(){
+        void givenOneInchAndOneGallon_whenCompare_ThenShouldNotEqual(){
             Quantity oneInch=createInch(1.0);
             Quantity oneGallon=createGallon(1.0);
 
             assertNotEquals(oneGallon,oneInch);
         }
+        @Test
+        void givenOneGallonAndOneInch_whenCompare_ThenShouldTheyNotEqual(){
+            Quantity oneGallon=createGallon(1.0);
+            Quantity oneInch=createInch(1.0);
+
+            assertNotEquals(oneGallon,oneInch);
+        }
+
+        @Test
+        void givenOneLitreAndOneInch_WhenCompare_ThenShouldTheyNotEqual(){
+
+            Quantity oneInch=createInch(1.0);
+            Quantity oneLitre=createLitre(1.0);
+
+            assertNotEquals(oneLitre,oneInch);
+        }
     }
 
-    @Nested
-    class AddGallonAndFeet {
 
-        private Quantity IllegalAccessException;
-
-//        @Test
-//        void givenOneGallonAndOneFeet_whenAdd_ThenShouldThrowException() {
-//
-//            assertThrows(IllegalAccessException.class, () -> {
-//                createFoot(1.0).add(createGallon(1.0));
-//            });
-//        }
-    }
 
 }
