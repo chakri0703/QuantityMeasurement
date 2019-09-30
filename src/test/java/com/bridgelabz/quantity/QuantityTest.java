@@ -33,7 +33,7 @@ public class QuantityTest {
 
     @Test
     void givenOneFeetAndString_WhenCompare_ThenShouldNotBeEqual() {
-        Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
+        Quantity oneFeetOne = Quantity.createFoot(1);
         String dummyString = "TDD";
 
         assertNotEquals(oneFeetOne, dummyString);
@@ -41,7 +41,7 @@ public class QuantityTest {
 
     @Test
     void givenOneFeetAndNull_WhenCompare_ThenShouldNotBeEqual() {
-        Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
+        Quantity oneFeetOne =Quantity.createFoot(1);
         Quantity nullObject = null;
 
         assertNotEquals(oneFeetOne, nullObject);
@@ -49,7 +49,7 @@ public class QuantityTest {
 
     @Test
     void givenSameObect_WhenCompare_ThenShouldBeEqual() {
-        Quantity oneFeet = new Quantity(1.0, Unit.feet);
+        Quantity oneFeet = Quantity.createFoot(1);
 
         assertEquals(oneFeet, oneFeet);
     }
