@@ -1,14 +1,21 @@
 package com.bridgelabz.quantity;
 
 public enum Unit {
-    feet(12),inch(1);
+    feet(12),
+    inch(1),
+    //    cm(1 / 2.54);
+    yard(3*12),
+    gallon(3.78),
+    litre(1);
 
-    private int converter;
 
-    Unit(int converter){
-        this.converter=converter;
+    private final double conversionFactor;
+
+    Unit(double conversionFactor) {
+        this.conversionFactor = conversionFactor;
     }
-    public int convertToBase(int value){
-       return value*converter;
-    };
+
+    public double convertToBase(double value) {
+        return value * conversionFactor;
+    }
 }
