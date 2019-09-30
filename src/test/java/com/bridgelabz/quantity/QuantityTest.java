@@ -350,47 +350,48 @@ public class QuantityTest {
         }
 
         @Test
-        void givenOneInchAndOneLitre_WhenCompare_ThenShouldTheyAreNOtEqual(){
-            Quantity oneInch=createInch(1.0);
-            Quantity oneLitre=createLitre(1.0);
+        void givenOneInchAndOneLitre_WhenCompare_ThenShouldTheyAreNOtEqual() {
+            Quantity oneInch = createInch(1.0);
+            Quantity oneLitre = createLitre(1.0);
 
-            assertNotEquals(oneInch,oneLitre);
+            assertNotEquals(oneInch, oneLitre);
         }
 
         @Test
-        void givenOneInchAndOneGallon_whenCompare_ThenShouldNotEqual(){
-            Quantity oneInch=createInch(1.0);
-            Quantity oneGallon=createGallon(1.0);
+        void givenOneInchAndOneGallon_whenCompare_ThenShouldNotEqual() {
+            Quantity oneInch = createInch(1.0);
+            Quantity oneGallon = createGallon(1.0);
 
-            assertNotEquals(oneGallon,oneInch);
-        }
-        @Test
-        void givenOneGallonAndOneInch_whenCompare_ThenShouldTheyNotEqual(){
-            Quantity oneGallon=createGallon(1.0);
-            Quantity oneInch=createInch(1.0);
-
-            assertNotEquals(oneGallon,oneInch);
+            assertNotEquals(oneGallon, oneInch);
         }
 
         @Test
-        void givenOneLitreAndOneInch_WhenCompare_ThenShouldTheyNotEqual(){
+        void givenOneGallonAndOneInch_whenCompare_ThenShouldTheyNotEqual() {
+            Quantity oneGallon = createGallon(1.0);
+            Quantity oneInch = createInch(1.0);
 
-            Quantity oneInch=createInch(1.0);
-            Quantity oneLitre=createLitre(1.0);
+            assertNotEquals(oneGallon, oneInch);
+        }
 
-            assertNotEquals(oneLitre,oneInch);
+        @Test
+        void givenOneLitreAndOneInch_WhenCompare_ThenShouldTheyNotEqual() {
+
+            Quantity oneInch = createInch(1.0);
+            Quantity oneLitre = createLitre(1.0);
+
+            assertNotEquals(oneLitre, oneInch);
         }
     }
 
     @Nested
-    class VolumeAndLengthAddTest{
+    class VolumeAndLengthAddTest {
 
         @Test
-        void givenOneFeetAndOneLitre_WhenAdd_ThenShouldThrowException(){
-            Quantity oneFeet=createFoot(1.0);
-            Quantity oneLitre=createLitre(1.0);
+        void givenOneFeetAndOneLitre_WhenAdd_ThenShouldThrowException() {
+            Quantity oneFeet = createFoot(1.0);
+            Quantity oneLitre = createLitre(1.0);
 
-            assertThrows(IllegalArgumentException.class,()->{
+            assertThrows(IllegalArgumentException.class, () -> {
                 oneFeet.add(oneLitre);
             });
         }
