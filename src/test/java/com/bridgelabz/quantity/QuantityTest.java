@@ -59,7 +59,6 @@ public class QuantityTest {
         }
     }
 
-
     @Nested
     class InchTest {
 
@@ -105,7 +104,6 @@ public class QuantityTest {
             assertEquals(oneInch, oneInch);
         }
     }
-
 
     @Nested
     class InchFeetEqualityTest {
@@ -215,7 +213,6 @@ public class QuantityTest {
         }
     }
 
-
     @Nested
     class InchAddTEest {
 
@@ -235,7 +232,6 @@ public class QuantityTest {
             assertEquals(createInch(2.0), zeroInch.add(oneInch));
         }
     }
-
 
     @Nested
     class AddInchAndFeetTest {
@@ -393,6 +389,16 @@ public class QuantityTest {
 
             assertThrows(IllegalArgumentException.class, () -> {
                 oneFeet.add(oneLitre);
+            });
+        }
+
+        @Test
+        void givenOneInchAndOneLitre_WhenAdd_ThenSouldTrowException(){
+            Quantity oneInch = createInch(1.0);
+            Quantity oneLitre = createLitre(1.0);
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                oneInch.add(oneLitre);
             });
         }
     }

@@ -41,7 +41,7 @@ public class Quantity {
             return false;
         }
         Quantity other = (Quantity) object;
-        if (unit.getBaseUnit(unit) != unit.getBaseUnit(other.unit)) {
+        if (!unit.checkBaseUnit(other.unit)) {
             return false;
         }
 
@@ -50,10 +50,10 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        if (unit.getBaseUnit(unit) != unit.getBaseUnit(other.unit)) {
+        if (!(unit.checkBaseUnit(other.unit))) {
             throw new IllegalArgumentException("Illegal Units");
         }
-        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit(unit));
+        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), this.unit.getBaseUnit());
     }
 }
 
