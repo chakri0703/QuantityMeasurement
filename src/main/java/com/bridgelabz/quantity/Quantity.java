@@ -15,6 +15,15 @@ public class Quantity {
     public static Quantity createYard(double value){
         return new Quantity(value,Unit.yard);
     }
+
+    public static Quantity createLitre(double value){
+        return  new Quantity(value,Unit.litre);
+    }
+
+
+    public static Quantity createGallon(double value){
+        return new Quantity(value,Unit.gallon);
+    }
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
