@@ -12,6 +12,9 @@ public class Quantity {
         return new Quantity(value,Unit.inch);
     }
 
+    public static Quantity createYard(double value){
+        return new Quantity(value,Unit.yard);
+    }
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
