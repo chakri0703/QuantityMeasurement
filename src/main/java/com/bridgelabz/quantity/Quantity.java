@@ -41,7 +41,7 @@ public class Quantity {
             return false;
         }
         Quantity other = (Quantity) object;
-        if (Unit.convertToBaseUnit(this.unit)!=Unit.convertToBaseUnit(other.unit)){
+        if (Unit.getBaseUnit(this.unit) != Unit.getBaseUnit(other.unit)) {
             return false;
         }
 
@@ -57,11 +57,11 @@ public class Quantity {
                 '}';
     }
 
-    public Quantity add(Quantity another) {
-        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard) && (another.unit == Unit.inch || another.unit == Unit.feet || another.unit == Unit.yard)) {
-            return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.inch);
+    public Quantity add(Quantity other) {
+        if ((this.unit == Unit.inch || this.unit == Unit.feet || this.unit == Unit.yard) && (other.unit == Unit.inch || other.unit == Unit.feet || other.unit == Unit.yard)) {
+            return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.inch);
         }
-        return new Quantity(unit.convertToBase(this.value) + another.unit.convertToBase(another.value), Unit.litre);
+        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.litre);
     }
 }
 
