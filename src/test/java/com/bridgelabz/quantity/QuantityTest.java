@@ -9,7 +9,6 @@ public class QuantityTest {
 
     @Test
     void givenZeroFeetAndZeoFeet_WhenCompare_ThenShouldBeEqual() {
-//        Quantity zeroFeetOne = new Quantity(0.0, Unit.feet);
         Quantity zeroFeetOne=Quantity.createFoot(0);
         Quantity zeroFeetTwo = new Quantity(0.0, Unit.feet);
 
@@ -18,16 +17,16 @@ public class QuantityTest {
 
     @Test
     void givenOneFeetAndOneFeet_WhenCompare_ThenShouldBeEqual() {
-        Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
-        Quantity oneFeetTwo = new Quantity(1.0, Unit.feet);
+        Quantity oneFeetOne=Quantity.createFoot(1);
+        Quantity oneFeetTwo =Quantity.createFoot(1);
 
         assertEquals(oneFeetOne, oneFeetTwo);
     }
 
     @Test
     void givenTwoFeetAndTwoFeet_WhenCompare_ThenShouldNotBeEqual() {
-        Quantity oneFeetOne = new Quantity(1.0, Unit.feet);
-        Quantity twoFeetTwo = new Quantity(2.0, Unit.feet);
+        Quantity oneFeetOne = Quantity.createFoot(1);
+        Quantity twoFeetTwo =Quantity.createFoot(2);
 
         assertNotEquals(oneFeetOne, twoFeetTwo);
     }
