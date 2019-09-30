@@ -41,18 +41,10 @@ public class Quantity {
             return false;
         }
         Quantity other = (Quantity) object;
-
-        if ((this.unit == Unit.inch && other.unit == Unit.litre) || (this.unit == Unit.litre && other.unit == Unit.inch)) {
+        if (Unit.convertToBaseUnit(this.unit)!=Unit.convertToBaseUnit(other.unit)){
             return false;
         }
 
-        if ((this.unit == Unit.feet && other.unit == Unit.gallon) || this.unit == Unit.gallon && other.unit == Unit.feet) {
-            return false;
-        }
-
-        if ((this.unit == Unit.gallon && other.unit == Unit.inch) || (this.unit == Unit.inch && other.unit == Unit.gallon)) {
-            return false;
-        }
         return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
 
     }

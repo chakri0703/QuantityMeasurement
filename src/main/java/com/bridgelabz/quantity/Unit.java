@@ -18,4 +18,11 @@ public enum Unit {
     public double convertToBase(double value) {
         return value * conversionFactor;
     }
+
+    public static Unit convertToBaseUnit(Unit unit){
+        if (unit==feet||unit==inch||unit==yard){
+            return inch;
+        }
+        return litre;
+    }
 }
