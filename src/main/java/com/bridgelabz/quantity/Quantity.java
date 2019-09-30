@@ -4,10 +4,13 @@ public class Quantity {
     private double value;
     private Unit unit;
 
-    public static Quantity createFoot(int value) {
+    public static Quantity createFoot(double value) {
         return new Quantity(value, Unit.feet);
     }
 
+    public static Quantity createInch(double value){
+        return new Quantity(value,Unit.inch);
+    }
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
