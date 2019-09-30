@@ -215,7 +215,6 @@ public class QuantityTest {
     }
 
 
-
     @Nested
     class InchAddTEest {
 
@@ -257,7 +256,7 @@ public class QuantityTest {
     }
 
     @Nested
-    class FeetAddTest{
+    class FeetAddTest {
         @Test
         void givenOneFeetAndOneFeet_WhenAdd_ThenShouldAdd() {
             Quantity onefeet = Quantity.createFoot(1.0);
@@ -268,61 +267,77 @@ public class QuantityTest {
 
     }
 
-    @Test
-    void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
+    @Nested
+    class GallonTest {
+        @Test
+        void givenOneGallonAndOneGallon_WhenCompare_ThenShouldBeEqual() {
 
-        Quantity oneGallon = Quantity.createGallon(1.0);
-        Quantity anotherOneGallon =Quantity.createGallon(1.0);
+            Quantity oneGallon = Quantity.createGallon(1.0);
+            Quantity anotherOneGallon = Quantity.createGallon(1.0);
 
-        assertEquals(oneGallon, anotherOneGallon);
+            assertEquals(oneGallon, anotherOneGallon);
+        }
     }
 
-    @Test
-    void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
+    @Nested
+    class LitreTest {
+        @Test
+        void givenOneLitreAndOneLitre_WhenCompare_ThenShouldBeEqual() {
 
-        Quantity oneLitre =Quantity.createLitre(1.0);
-        Quantity anotherOneLitre = Quantity.createLitre(1.0);
+            Quantity oneLitre = Quantity.createLitre(1.0);
+            Quantity anotherOneLitre = Quantity.createLitre(1.0);
 
-        assertEquals(oneLitre, anotherOneLitre);
+            assertEquals(oneLitre, anotherOneLitre);
+        }
     }
 
-    @Test
-    void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
+    @Nested
+    class LitreAndGallonEqualityTest {
+        @Test
+        void givenOneGallonAndThreeDotSevenEightLitre_WhenCompare_ThenShouldBeEqual() {
 
-        Quantity oneGallon = Quantity.createGallon(1.0);
-        Quantity ThreeDotSevenEightLitre = Quantity.createLitre(3.78);
+            Quantity oneGallon = Quantity.createGallon(1.0);
+            Quantity ThreeDotSevenEightLitre = Quantity.createLitre(3.78);
 
-        assertEquals(oneGallon, ThreeDotSevenEightLitre);
+            assertEquals(oneGallon, ThreeDotSevenEightLitre);
+        }
+
+        @Test
+        void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
+
+            Quantity oneGallon = Quantity.createGallon(1.0);
+            Quantity anotherGallon = Quantity.createGallon(1.0);
+
+
+            assertEquals(Quantity.createGallon(2.0), oneGallon.add(anotherGallon));
+        }
+
+
     }
 
-    @Test
-    void givenOneGallonAndOneGallon_WhenAdd_ThenShouldAdd() {
+    @Nested
+    class LitreGallonAddTest {
+        @Test
+        void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
 
-        Quantity oneGallon = Quantity.createGallon(1.0);
-        Quantity anotherGallon = Quantity.createGallon(1.0);
-
-
-        assertEquals(Quantity.createGallon(2.0), oneGallon.add(anotherGallon));
-    }
-
-    @Test
-    void givenOneLitreAndOneLitre_WhenAdd_ThenShouldAdd() {
-
-        Quantity oneLitre =Quantity.createLitre(1.0);
-        Quantity anotherLitre = Quantity.createLitre(1.0);
+            Quantity oneLitre = Quantity.createLitre(1.0);
+            Quantity anotherLitre = Quantity.createLitre(1.0);
 
 
-        assertEquals(Quantity.createLitre(2.0), oneLitre.add(anotherLitre));
-    }
+            assertEquals(Quantity.createLitre(2.0), oneLitre.add(anotherLitre));
+        }
 
-    @Test
-    void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
+        @Test
+        void givenOneLitreAndOneGallon_WhenAdd_ThenShouldAdd() {
 
-        Quantity oneLitre = Quantity.createLitre(1.0);
-        Quantity oneGallon =Quantity.createGallon(1.0);
+            Quantity oneLitre = Quantity.createLitre(1.0);
+            Quantity oneGallon = Quantity.createGallon(1.0);
 
 
-        assertEquals(Quantity.createLitre(4.78), oneLitre.add(oneGallon));
+            assertEquals(Quantity.createLitre(4.78), oneLitre.add(oneGallon));
+        }
+
+
     }
 
 
