@@ -219,7 +219,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneFeet_WhenAdd_ThenShouldAdd() {
-        Quantity oneInch = new Quantity(1, Unit.inch);
+        Quantity oneInch = Quantity.createInch(1.0);
         Quantity oneFeet = new Quantity(1, Unit.feet);
 
         assertEquals(new Quantity(13.0, Unit.inch), oneInch.add(oneFeet));
