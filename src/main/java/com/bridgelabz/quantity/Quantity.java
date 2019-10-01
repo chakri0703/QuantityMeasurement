@@ -3,7 +3,11 @@ package com.bridgelabz.quantity;
 public class Quantity {
     private double value;
     private Unit unit;
-
+    private IUnit unit2;
+    public Quantity(double value,IUnit unit2){
+        this.value=value;
+        this.unit2=unit2;
+    }
     public static Quantity createFoot(double value) {
         return new Quantity(value, Unit.feet);
     }
