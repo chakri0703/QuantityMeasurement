@@ -583,5 +583,15 @@ public class QuantityTest {
 
             assertEquals(sum, oneGram.add(oneKg));
         }
+
+        @Test
+        void givenOneKgAndFiveHundredGrams_WhenAdd_ThenTheyShouldAdd() {
+            Quantity fiveHundredGrams = createGrams(500.0);
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity sum = createGrams(1500.0);
+
+            assertEquals(sum, oneKg.add(fiveHundredGrams));
+
+        }
     }
 }
