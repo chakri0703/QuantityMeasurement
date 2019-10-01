@@ -25,9 +25,6 @@ public class Gallon implements IUnit {
         if(this==obj){
             return true;
         }
-        if(obj instanceof Volume){
-            return true;
-        }
-        return false;
+        return obj instanceof Volume;
     }
 }

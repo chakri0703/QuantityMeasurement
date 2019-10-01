@@ -23,9 +23,6 @@ public class Litre implements Volume {
         if(this==obj){
             return true;
         }
-        if(obj instanceof Volume){
-            return true;
-        }
-        return false;
+        return obj instanceof Volume;
     }
 }

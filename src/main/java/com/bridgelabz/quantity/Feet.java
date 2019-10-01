@@ -24,9 +24,6 @@ public class Feet implements Length {
         if(this==obj){
             return true;
         }
-        if(obj instanceof Length){
-            return true;
-        }
-        return false;
+        return obj instanceof Length;
     }
 }

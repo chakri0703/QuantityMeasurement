@@ -23,22 +23,11 @@ public class Inch implements Length{
     }
 
     @Override
-    public String toString() {
-        return "Inch{" +
-                "value=" + value +
-                ", unit=" + unit +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if(this==obj){
             return true;
         }
-        if(obj instanceof Length){
-            return true;
-        }
-        return false;
+        return obj instanceof Length;
     }
 }
 
