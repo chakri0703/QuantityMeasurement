@@ -491,18 +491,31 @@ public class QuantityTest {
             Quantity oneKg = createKiloGram(1.0);
             Quantity oneInch = createInch(1.0);
 
-            assertThrows(IllegalArgumentException.class,()->{
+            assertThrows(IllegalArgumentException.class, () -> {
                 oneKg.add(oneInch);
             });
         }
+
         @Test
         void givenOneKgAndOneFeet_WhenAdd_ThenShouldThrowException() {
             Quantity oneKg = createKiloGram(1.0);
             Quantity oneFeet = createFoot(1.0);
 
-            assertThrows(IllegalArgumentException.class,()->{
+            assertThrows(IllegalArgumentException.class, () -> {
                 oneKg.add(oneFeet);
             });
         }
+
+        @Test
+        void givenOneKgAndOneYard_WhenAdd_ThenShouldThrowException() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity oneYard = createYard(1.0);
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                oneKg.add(oneYard);
+            });
+        }
+
+
     }
 }
