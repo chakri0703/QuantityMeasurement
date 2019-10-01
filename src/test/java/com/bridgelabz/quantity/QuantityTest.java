@@ -407,8 +407,26 @@ public class QuantityTest {
     class KiloGramTest{
 
         @Test
-        void givenZeroKgAndZeroKg_WhenCompare_ThenTheyShouldBeEqual(){
+        void givenZeroKgAndZeroKg_WhenCompare_ThenTheyShouldBeEqual() {
+            Quantity zeroKg=createKiloGram(0.0);
+            Quantity anotherZero=createKiloGram(0.0);
 
+            assertEquals(zeroKg,anotherZero);
+        }
+
+        @Test
+        void givenOneKgAndOneKg_WhenCompare_ThenTheyShouldBeEqual(){
+            Quantity oneKg=createKiloGram(1.0);
+            Quantity anotherOneKg=createKiloGram(1.0);
+
+            assertEquals(oneKg,anotherOneKg);
+        }
+
+        @Test
+        void givenOneKgAndNull_WhenCompare_ThenTheyShouldNotEqual(){
+            Quantity oneKg=createKiloGram(1.0);
+
+            assertNotEquals(oneKg,null);
         }
     }
 }

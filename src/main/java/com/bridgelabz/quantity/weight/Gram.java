@@ -2,15 +2,15 @@ package com.bridgelabz.quantity.weight;
 
 import com.bridgelabz.quantity.IUnit;
 
-public class KiloGram implements IUnit {
-    public static final double CONVERT_TO_GRAMS=1000.0;
+public class Gram implements IWeight {
+    public static final double CONVERT_TO_GRAMS=1.0;
     @Override
     public double convertToBase(double value) {
         return value*CONVERT_TO_GRAMS;
     }
 
     @Override
-    public IUnit getBaseUnit() {
+    public IWeight getBaseUnit() {
         return new Gram();
     }
 
@@ -26,3 +26,4 @@ public class KiloGram implements IUnit {
         return obj instanceof IWeight;
     }
 }
+
