@@ -539,12 +539,39 @@ public class QuantityTest {
         }
 
         @Test
-        void givenZeroGramAndOneGram_WhenAdd_ThenShouldAddI(){
-            Quantity zeroGram=createGrams(0.0);
-            Quantity oneGram=createGrams(1.0);
+        void givenZeroGramAndOneGram_WhenAdd_ThenShouldAdd() {
+            Quantity zeroGram = createGrams(0.0);
+            Quantity oneGram = createGrams(1.0);
 
-            assertEquals(oneGram,oneGram.add(zeroGram));
+            assertEquals(oneGram, oneGram.add(zeroGram));
         }
 
+        @Test
+        void givenOneGramAndOneGram_WhenAdd_ThenShouldAdd() {
+            Quantity oneGram = createGrams(1.0);
+            Quantity anotherOneGram = createGrams(1.0);
+            Quantity twoGrams = createGrams(2.0);
+
+            assertEquals(twoGrams, oneGram.add(anotherOneGram));
+        }
+    }
+
+    @Nested
+    class AddingKgAndGrams{
+
+        @Test
+        void givenZeroAndZeroGrams_WhenAdd_ThenTheyShouldAdd(){
+            Quantity zeroGram=createGrams(0.0);
+            Quantity zeroKg=createKiloGram(0.0);
+
+            assertEquals(zeroGram,zeroGram.add(zeroKg));
+        }
+        @Test
+        void givenOneGramAndZeroKg_whenAdd_ThenTheyShouldAdd(){
+            Quantity oneGram=createGrams(1.0);
+            Quantity zeroKg=createKiloGram(0.0);
+
+            assertEquals(oneGram,oneGram.add(zeroKg));
+        }
     }
 }
