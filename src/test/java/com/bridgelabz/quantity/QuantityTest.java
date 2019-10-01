@@ -456,4 +456,15 @@ public class QuantityTest {
             assertNotEquals(oneGram,null);
         }
     }
+
+    @Nested
+    class AddingKiloGrams{
+        @Test
+        void givenZeroAndZeroKgs_WhenAdd_TheyShouldAdd(){
+            Quantity zeroKg=createKiloGram(0.0);
+            Quantity anotherKg=createKiloGram(0.0);
+
+            assertEquals(zeroKg,zeroKg.add(anotherKg));
+        }
+    }
 }
