@@ -402,4 +402,13 @@ public class QuantityTest {
             });
         }
     }
+
+    @Nested
+    class KiloGramTest{
+
+        @Test
+        void givenZeroKgAndZeroKg_WhenCompare_ThenTheyShouldBeEqual(){
+
+        }
+    }
 }

@@ -1,4 +1,6 @@
-package com.bridgelabz.quantity;
+package com.bridgelabz.quantity.volume;
+
+import com.bridgelabz.quantity.IUnit;
 
 public class Gallon implements IUnit {
     public static final double CONVERT_TO_LITRE=3.78;

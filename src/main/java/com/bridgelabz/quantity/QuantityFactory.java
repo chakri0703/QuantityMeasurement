@@ -1,5 +1,12 @@
 package com.bridgelabz.quantity;
 
+import com.bridgelabz.quantity.lenght.Feet;
+import com.bridgelabz.quantity.lenght.Inch;
+import com.bridgelabz.quantity.lenght.Yard;
+import com.bridgelabz.quantity.volume.Gallon;
+import com.bridgelabz.quantity.volume.Litre;
+import com.bridgelabz.quantity.weight.KiloGram;
+
 public class QuantityFactory {
 
     public static Quantity createInch(double value){
@@ -19,5 +26,9 @@ public class QuantityFactory {
 
     public static Quantity createGallon(double value){
         return new Quantity(value,new Gallon());
+    }
+
+    public static Quantity createKiloGram(double value) {
+        return new Quantity(value,new KiloGram());
     }
 }

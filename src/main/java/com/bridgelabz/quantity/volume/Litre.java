@@ -1,17 +1,18 @@
-package com.bridgelabz.quantity;
+package com.bridgelabz.quantity.volume;
 
-public class Feet implements Length {
+import com.bridgelabz.quantity.IUnit;
 
-    public static final double CONVERT_TO_INCH=12.0;
+public class Litre implements Volume {
 
+    public static final double CONVERTER=1.0;
     @Override
     public double convertToBase(double value) {
-        return value*CONVERT_TO_INCH;
+        return value*CONVERTER;
     }
 
     @Override
-    public Length getBaseUnit() {
-        return new Inch();
+    public Volume getBaseUnit() {
+        return new Litre();
     }
 
     @Override
@@ -24,6 +25,6 @@ public class Feet implements Length {
         if(this==obj){
             return true;
         }
-        return obj instanceof Length;
+        return obj instanceof Volume;
     }
 }

@@ -24,6 +24,9 @@ public class Quantity {
         return QuantityFactory.createGallon(value);
     }
 
+    public static Quantity createKiloGram(double value){
+        return QuantityFactory.createKiloGram(value);
+    }
 
     Quantity(double value, IUnit unit){
         this.value=value;

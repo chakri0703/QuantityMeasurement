@@ -1,12 +1,15 @@
-package com.bridgelabz.quantity;
+package com.bridgelabz.quantity.lenght;
 
-public class Yard implements Length {
+import com.bridgelabz.quantity.IUnit;
 
-    public static final double CONVERT_TO_INCH = 36.0;
+public class Inch implements Length {
 
+    public static final double CONVERT_TO_INCH=1.0;
+    private  double value;
+    private IUnit unit;
     @Override
     public double convertToBase(double value) {
-        return value * CONVERT_TO_INCH;
+        return value*CONVERT_TO_INCH;
     }
 
     @Override
@@ -16,14 +19,17 @@ public class Yard implements Length {
 
     @Override
     public boolean checkBaseUnit(IUnit unit2) {
+        System.out.println(unit2);
+        System.out.println(this);
         return this.getBaseUnit().equals(unit2.getBaseUnit());
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if(this==obj){
             return true;
         }
         return obj instanceof Length;
     }
 }
+
