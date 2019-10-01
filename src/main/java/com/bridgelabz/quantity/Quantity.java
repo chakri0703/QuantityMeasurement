@@ -33,7 +33,7 @@ public class Quantity {
         this.unit = unit;
     }
 
-    public static Quantity creatGrams(double value) {
+    public static Quantity createGrams(double value) {
         return  QuantityFactory.createGrams(value);
     }
 

@@ -434,11 +434,19 @@ public class QuantityTest {
     class GramTest{
 
         @Test
-        void givenZeroAndZeroGrams_whenCompared_thenTheyShouldBeEqual(){
-            Quantity zeroGram=creatGrams(0.0);
-            Quantity anotherGrams=creatGrams(0.0);
+        void givenZeroAndZeroGrams_WhenCompared_ThenTheyShouldBeEqual(){
+            Quantity zeroGram=createGrams(0.0);
+            Quantity anotherGrams=createGrams(0.0);
 
             assertEquals(zeroGram,anotherGrams);
+        }
+
+        @Test
+        void givenOneAndOneGram_WhenCompared_ThenTheyShouldBeEqual(){
+            Quantity oneGram=createGrams(1.0);
+            Quantity anotherOneGram=createGrams(1.0);
+
+            assertEquals(oneGram,anotherOneGram);
         }
     }
 }
