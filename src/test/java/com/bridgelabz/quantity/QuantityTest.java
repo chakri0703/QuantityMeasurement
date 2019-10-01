@@ -466,5 +466,13 @@ public class QuantityTest {
 
             assertEquals(zeroKg,zeroKg.add(anotherKg));
         }
+
+        @Test
+        void givenOneKgAndZeroKg_WhenAdd_ThenShouldAdd(){
+            Quantity zeroKg=createKiloGram(0.0);
+            Quantity oneKg=createKiloGram(1.0);
+
+            assertEquals(oneKg,oneKg.add(zeroKg));
+        }
     }
 }
