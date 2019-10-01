@@ -516,6 +516,27 @@ public class QuantityTest {
             });
         }
 
+        @Test
+        void givenOneKgAndOneLitre_WhenAdd_ThenShouldThrowException() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity oneLitre = createLitre(1.0);
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                oneKg.add(oneLitre);
+            });
+        }
+    }
+
+    @Nested
+    class AddingGrams {
+
+        @Test
+        void givenZeroGramAndZeroGram_WhenAdd_ThenTheyShouldAdd(){
+            Quantity zeroGram=createGrams(0.0);
+            Quantity anotherZeroGram=createGrams(0.0);
+
+            assertEquals(zeroGram,zeroGram.add(anotherZeroGram));
+        }
 
     }
 }
