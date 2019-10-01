@@ -393,7 +393,7 @@ public class QuantityTest {
         }
 
         @Test
-        void givenOneInchAndOneLitre_WhenAdd_ThenSouldTrowException(){
+        void givenOneInchAndOneLitre_WhenAdd_ThenSouldTrowException() {
             Quantity oneInch = createInch(1.0);
             Quantity oneLitre = createLitre(1.0);
 
@@ -404,75 +404,96 @@ public class QuantityTest {
     }
 
     @Nested
-    class KiloGramTest{
+    class KiloGramTest {
 
         @Test
         void givenZeroKgAndZeroKg_WhenCompare_ThenTheyShouldBeEqual() {
-            Quantity zeroKg=createKiloGram(0.0);
-            Quantity anotherZero=createKiloGram(0.0);
+            Quantity zeroKg = createKiloGram(0.0);
+            Quantity anotherZero = createKiloGram(0.0);
 
-            assertEquals(zeroKg,anotherZero);
+            assertEquals(zeroKg, anotherZero);
         }
 
         @Test
-        void givenOneKgAndOneKg_WhenCompare_ThenTheyShouldBeEqual(){
-            Quantity oneKg=createKiloGram(1.0);
-            Quantity anotherOneKg=createKiloGram(1.0);
+        void givenOneKgAndOneKg_WhenCompare_ThenTheyShouldBeEqual() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity anotherOneKg = createKiloGram(1.0);
 
-            assertEquals(oneKg,anotherOneKg);
+            assertEquals(oneKg, anotherOneKg);
         }
 
         @Test
-        void givenOneKgAndNull_WhenCompare_ThenTheyShouldNotEqual(){
-            Quantity oneKg=createKiloGram(1.0);
+        void givenOneKgAndNull_WhenCompare_ThenTheyShouldNotEqual() {
+            Quantity oneKg = createKiloGram(1.0);
 
-            assertNotEquals(oneKg,null);
-        }
-    }
-
-    @Nested
-    class GramTest{
-
-        @Test
-        void givenZeroAndZeroGrams_WhenCompared_ThenTheyShouldBeEqual(){
-            Quantity zeroGram=createGrams(0.0);
-            Quantity anotherGrams=createGrams(0.0);
-
-            assertEquals(zeroGram,anotherGrams);
-        }
-
-        @Test
-        void givenOneAndOneGram_WhenCompared_ThenTheyShouldBeEqual(){
-            Quantity oneGram=createGrams(1.0);
-            Quantity anotherOneGram=createGrams(1.0);
-
-            assertEquals(oneGram,anotherOneGram);
-        }
-
-        @Test
-        void givenOneGramAndNull_WhenCompared_ThenTheyShouldBeEqual(){
-            Quantity oneGram= createGrams(1.0);
-
-            assertNotEquals(oneGram,null);
+            assertNotEquals(oneKg, null);
         }
     }
 
     @Nested
-    class AddingKiloGrams{
-        @Test
-        void givenZeroAndZeroKgs_WhenAdd_TheyShouldAdd(){
-            Quantity zeroKg=createKiloGram(0.0);
-            Quantity anotherKg=createKiloGram(0.0);
+    class GramTest {
 
-            assertEquals(zeroKg,zeroKg.add(anotherKg));
+        @Test
+        void givenZeroAndZeroGrams_WhenCompared_ThenTheyShouldBeEqual() {
+            Quantity zeroGram = createGrams(0.0);
+            Quantity anotherGrams = createGrams(0.0);
+
+            assertEquals(zeroGram, anotherGrams);
         }
 
         @Test
-        void givenOneKgAndZeroKg_WhenAdd_ThenShouldAdd(){
-            Quantity zeroKg=createKiloGram(0.0);
-            Quantity oneKg=createKiloGram(1.0);
+        void givenOneAndOneGram_WhenCompared_ThenTheyShouldBeEqual() {
+            Quantity oneGram = createGrams(1.0);
+            Quantity anotherOneGram = createGrams(1.0);
 
-            assertEquals(oneKg,oneKg.add(zeroKg));
+            assertEquals(oneGram, anotherOneGram);
+        }
+
+        @Test
+        void givenOneGramAndNull_WhenCompared_ThenTheyShouldBeEqual() {
+            Quantity oneGram = createGrams(1.0);
+
+            assertNotEquals(oneGram, null);
+        }
+    }
+
+    @Nested
+    class AddingKiloGrams {
+        @Test
+        void givenZeroAndZeroKgs_WhenAdd_TheyShouldAdd() {
+            Quantity zeroKg = createKiloGram(0.0);
+            Quantity anotherKg = createKiloGram(0.0);
+
+            assertEquals(zeroKg, zeroKg.add(anotherKg));
+        }
+
+        @Test
+        void givenOneKgAndZeroKg_WhenAdd_ThenShouldAdd() {
+            Quantity zeroKg = createKiloGram(0.0);
+            Quantity oneKg = createKiloGram(1.0);
+
+            assertEquals(oneKg, oneKg.add(zeroKg));
+        }
+
+        @Test
+        void givenOneKgAndOneKg_WhenAdd_ThenShouldAdd() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity anotherOneKg = createKiloGram(1.0);
+            Quantity twoKg = createKiloGram(2.0);
+        }
+    }
+
+    @Nested
+    class AddingKgWithOtherQuantity {
+
+        @Test
+        void givenOneKgAndOneInch_WhenAdd_ThenShouldThrowException() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity oneInch = createInch(1.0);
+
+            assertThrows(IllegalArgumentException.class,()->{
+                oneKg.add(oneInch);
+            });
         }
     }
 }
