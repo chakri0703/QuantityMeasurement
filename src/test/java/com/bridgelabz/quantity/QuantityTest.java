@@ -599,12 +599,22 @@ public class QuantityTest {
     class AddingGramsWithOtherQuantity {
 
         @Test
-        void givenOneGramAndOneLitre_WhenAdd_ThenShouldThrewException() {
+        void givenOneGramAndOneLitre_WhenAdd_ThenShouldThrowException() {
             Quantity oneGram = createGrams(1.0);
             Quantity oneLitre = createLitre(1.0);
 
             assertThrows(IllegalArgumentException.class, () -> {
                 oneGram.add(oneLitre);
+            });
+        }
+
+        @Test
+        void givenOneGramAndOneInch_WhenAdd_ThenShouldThrowException() {
+            Quantity oneGram = createGrams(1.0);
+            Quantity oneInch = createInch(1.0);
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                oneGram.add(oneInch);
             });
         }
     }
