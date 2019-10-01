@@ -2,8 +2,7 @@ package com.bridgelabz.quantity;
 
 public class Quantity {
     private double value;
-    private IUnit unit2;
-    private Unit unit;
+    private IUnit unit;
 
     public static Quantity createFoot(double value) {
         return QuantityFactory.createFoot(value);
@@ -26,13 +25,8 @@ public class Quantity {
     }
 
 
-    Quantity(double value, IUnit unit2){
+    Quantity(double value, IUnit unit){
         this.value=value;
-        this.unit2 = unit2;
-    }
-
-    private Quantity(double value, Unit unit) {
-        this.value = value;
         this.unit = unit;
     }
 
@@ -55,8 +49,16 @@ public class Quantity {
 
     }
 
+    @Override
+    public String toString() {
+        return "Quantity{" +
+                "value=" + value +
+                ", unit2=" + unit +
+                '}';
+    }
+
     public Quantity add(Quantity other) {
-        if (!(unit.checkBaseUnit(other.unit))) {
+        if (!unit.checkBaseUnit(other.unit)) {
             throw new IllegalArgumentException("Illegal Units");
         }
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), this.unit.getBaseUnit());

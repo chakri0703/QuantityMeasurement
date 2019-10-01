@@ -14,7 +14,7 @@ public class QuantityFactory {
     }
 
     public static Quantity createLitre(double value){
-        return new Quantity( value,new Litre());
+        return new Quantity( value, (IUnit) new Litre());
     }
 
     public static Quantity createGallon(double value){

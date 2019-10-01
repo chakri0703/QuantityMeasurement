@@ -52,7 +52,7 @@ public class QuantityTest {
         }
 
         @Test
-        void givenSameObect_WhenCompare_ThenShouldBeEqual() {
+        void givenSameObject_WhenCompare_ThenShouldBeEqual() {
             Quantity oneFeet = createFoot(1);
 
             assertEquals(oneFeet, oneFeet);
