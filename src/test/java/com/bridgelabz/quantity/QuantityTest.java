@@ -448,5 +448,12 @@ public class QuantityTest {
 
             assertEquals(oneGram,anotherOneGram);
         }
+
+        @Test
+        void givenOneGramAndNull_WhenCompared_ThenTheyShouldBeEqual(){
+            Quantity oneGram= createGrams(1.0);
+
+            assertNotEquals(oneGram,null);
+        }
     }
 }
