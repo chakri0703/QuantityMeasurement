@@ -531,11 +531,19 @@ public class QuantityTest {
     class AddingGrams {
 
         @Test
-        void givenZeroGramAndZeroGram_WhenAdd_ThenTheyShouldAdd(){
-            Quantity zeroGram=createGrams(0.0);
-            Quantity anotherZeroGram=createGrams(0.0);
+        void givenZeroGramAndZeroGram_WhenAdd_ThenTheyShouldAdd() {
+            Quantity zeroGram = createGrams(0.0);
+            Quantity anotherZeroGram = createGrams(0.0);
 
-            assertEquals(zeroGram,zeroGram.add(anotherZeroGram));
+            assertEquals(zeroGram, zeroGram.add(anotherZeroGram));
+        }
+
+        @Test
+        void givenZeroGramAndOneGram_WhenAdd_ThenShouldAddI(){
+            Quantity zeroGram=createGrams(0.0);
+            Quantity oneGram=createGrams(1.0);
+
+            assertEquals(oneGram,oneGram.add(zeroGram));
         }
 
     }
