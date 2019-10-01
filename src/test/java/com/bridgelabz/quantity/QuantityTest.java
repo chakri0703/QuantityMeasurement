@@ -495,5 +495,14 @@ public class QuantityTest {
                 oneKg.add(oneInch);
             });
         }
+        @Test
+        void givenOneKgAndOneFeet_WhenAdd_ThenShouldThrowException() {
+            Quantity oneKg = createKiloGram(1.0);
+            Quantity oneFeet = createFoot(1.0);
+
+            assertThrows(IllegalArgumentException.class,()->{
+                oneKg.add(oneFeet);
+            });
+        }
     }
 }
