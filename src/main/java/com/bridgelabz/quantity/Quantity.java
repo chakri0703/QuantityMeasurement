@@ -33,6 +33,10 @@ public class Quantity {
         this.unit = unit;
     }
 
+    public static Quantity creatGrams(double value) {
+        return  QuantityFactory.createGrams(value);
+    }
+
     @Override
     public boolean equals(Object object) {
 

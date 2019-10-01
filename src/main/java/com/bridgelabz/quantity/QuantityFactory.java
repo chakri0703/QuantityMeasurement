@@ -5,6 +5,7 @@ import com.bridgelabz.quantity.lenght.Inch;
 import com.bridgelabz.quantity.lenght.Yard;
 import com.bridgelabz.quantity.volume.Gallon;
 import com.bridgelabz.quantity.volume.Litre;
+import com.bridgelabz.quantity.weight.Gram;
 import com.bridgelabz.quantity.weight.KiloGram;
 
 public class QuantityFactory {
@@ -30,5 +31,9 @@ public class QuantityFactory {
 
     public static Quantity createKiloGram(double value) {
         return new Quantity(value,new KiloGram());
+    }
+
+    public static Quantity createGrams(double value) {
+        return new Quantity(value,new Gram());
     }
 }

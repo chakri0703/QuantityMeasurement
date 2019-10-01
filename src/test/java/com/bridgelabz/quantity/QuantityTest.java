@@ -429,4 +429,16 @@ public class QuantityTest {
             assertNotEquals(oneKg,null);
         }
     }
+
+    @Nested
+    class GramTest{
+
+        @Test
+        void givenZeroAndZeroGrams_whenCompared_thenTheyShouldBeEqual(){
+            Quantity zeroGram=creatGrams(0.0);
+            Quantity anotherGrams=creatGrams(0.0);
+
+            assertEquals(zeroGram,anotherGrams);
+        }
+    }
 }
