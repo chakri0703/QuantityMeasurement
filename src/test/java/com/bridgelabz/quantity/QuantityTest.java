@@ -594,4 +594,18 @@ public class QuantityTest {
 
         }
     }
+
+    @Nested
+    class AddingGramsWithOtherQuantity {
+
+        @Test
+        void givenOneGramAndOneLitre_WhenAdd_ThenShouldThrewException() {
+            Quantity oneGram = createGrams(1.0);
+            Quantity oneLitre = createLitre(1.0);
+
+            assertThrows(IllegalArgumentException.class, () -> {
+                oneGram.add(oneLitre);
+            });
+        }
+    }
 }
