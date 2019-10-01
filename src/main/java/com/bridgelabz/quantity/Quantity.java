@@ -17,12 +17,12 @@ public class Quantity {
         return QuantityFactory.createYard(value);
     }
     public static Quantity createLitre(double value) {
-        return new Quantity(value, Unit.litre);
+        return QuantityFactory.createLitre(value);
     }
 
 
     public static Quantity createGallon(double value) {
-        return new Quantity(value, Unit.gallon);
+        return QuantityFactory.createGallon(value);
     }
 
 

@@ -12,4 +12,12 @@ public class QuantityFactory {
     public static  Quantity createYard(double value){
         return new Quantity(value,new Yard());
     }
+
+    public static Quantity createLitre(double value){
+        return new Quantity( value,new Litre());
+    }
+
+    public static Quantity createGallon(double value){
+        return new Quantity(value,new Gallon());
+    }
 }
