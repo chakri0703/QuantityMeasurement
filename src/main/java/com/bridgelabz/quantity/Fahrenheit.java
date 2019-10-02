@@ -1,11 +1,12 @@
-package com.bridgelabz.quantity.temperature;
+package com.bridgelabz.quantity;
 
-import com.bridgelabz.quantity.IUnit;
+import com.bridgelabz.quantity.temperature.Celsius;
+import com.bridgelabz.quantity.temperature.ITemperature;
 
-public class Celsius implements ITemperature {
+public class Fahrenheit implements IUnit {
     @Override
     public double convertToBase(double value) {
-        return value * 1;
+        return (value - 32) * 5 / 9;
     }
 
     @Override
@@ -15,7 +16,7 @@ public class Celsius implements ITemperature {
 
     @Override
     public boolean checkBaseUnit(IUnit unit2) {
-        return this.getBaseUnit().equals(unit2.getBaseUnit());
+        return false;
     }
 
     @Override

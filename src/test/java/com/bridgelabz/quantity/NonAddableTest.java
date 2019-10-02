@@ -20,19 +20,33 @@ public class NonAddableTest {
         }
 
         @Test
-        void givenOneAndOneCelsius_WhenCompare_ThenTheyShouldBeEqual(){
-            NonAddableQuality oneCelsius=createCelsius(1.0);
-            NonAddableQuality anotherCelsius=createCelsius(1.0);
+        void givenOneAndOneCelsius_WhenCompare_ThenTheyShouldBeEqual() {
+            NonAddableQuality oneCelsius = createCelsius(1.0);
+            NonAddableQuality anotherCelsius = createCelsius(1.0);
 
-            assertEquals(oneCelsius,anotherCelsius);
+            assertEquals(oneCelsius, anotherCelsius);
         }
 
         @Test
-        void givenOneAndZeroCelsius_WhenCompare_ThyenTheyShouldBeEqual(){
-            NonAddableQuality oneCelssius=createCelsius(1.0);
-            NonAddableQuality zeroCelsius=createCelsius(0.0);
+        void givenOneAndZeroCelsius_WhenCompare_ThyenTheyShouldBeNotEqual() {
+            NonAddableQuality oneCelsius = createCelsius(1.0);
+            NonAddableQuality zeroCelsius = createCelsius(0.0);
 
-            assertNotEquals(oneCelssius,zeroCelsius);
+            assertNotEquals(oneCelsius, zeroCelsius);
+        }
+
+        @Test
+        void givenOneAndTwoCelsius_WhenCompare_ThenTheyShouldBeNotEqaul() {
+            NonAddableQuality oneCelsius = createCelsius(1.0);
+            NonAddableQuality twoCelsius = createCelsius(2.0);
+
+            assertNotEquals(oneCelsius, twoCelsius);
+        }
+
+        @Nested
+        class FahrenheitTest {
+            NonAddableQuality zeroFahren = NonAddableQuality.createFahrenheit(0.0);
+            NonAddableQuality anotherFahren = NonAddableQuality.createFahrenheit(0.0);
         }
     }
 }

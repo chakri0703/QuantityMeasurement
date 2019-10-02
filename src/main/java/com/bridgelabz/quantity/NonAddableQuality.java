@@ -16,9 +16,13 @@ public class NonAddableQuality {
         return new NonAddableQuality(value, new Celsius());
     }
 
+    public static NonAddableQuality createFahrenheit(double value) {
+        return new NonAddableQuality(value, new Fahrenheit());
+    }
+
     @Override
     public String toString() {
-        return "Quantity{" +
+        return "NonAddableQuantity{" +
                 "value=" + value +
                 ", unit2=" + unit +
                 '}';
@@ -37,6 +41,6 @@ public class NonAddableQuality {
             return false;
         }
 
-       return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01 && unit.getBaseUnit()==other.unit.getBaseUnit();
+        return Math.abs(unit.convertToBase(value) - other.unit.convertToBase(other.value)) <= 0.01;
     }
 }

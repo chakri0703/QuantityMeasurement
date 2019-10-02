@@ -15,6 +15,7 @@ public class Quantity {
     public static Quantity createYard(double value) {
         return AddableQuantityFactory.createYard(value);
     }
+
     public static Quantity createLitre(double value) {
         return AddableQuantityFactory.createLitre(value);
     }
@@ -24,17 +25,17 @@ public class Quantity {
         return AddableQuantityFactory.createGallon(value);
     }
 
-    public static Quantity createKiloGram(double value){
+    public static Quantity createKiloGram(double value) {
         return AddableQuantityFactory.createKiloGram(value);
     }
 
-    Quantity(double value, IUnit unit){
-        this.value=value;
+    Quantity(double value, IUnit unit) {
+        this.value = value;
         this.unit = unit;
     }
 
     public static Quantity createGrams(double value) {
-        return  AddableQuantityFactory.createGrams(value);
+        return AddableQuantityFactory.createGrams(value);
     }
 
     @Override
