@@ -3,13 +3,12 @@ package com.bridgelabz.quantity;
 import com.bridgelabz.quantity.lenght.Feet;
 import com.bridgelabz.quantity.lenght.Inch;
 import com.bridgelabz.quantity.lenght.Yard;
-import com.bridgelabz.quantity.temperature.Celsius;
 import com.bridgelabz.quantity.volume.Gallon;
 import com.bridgelabz.quantity.volume.Litre;
 import com.bridgelabz.quantity.weight.Gram;
 import com.bridgelabz.quantity.weight.KiloGram;
 
-public class QuantityFactory {
+public class AddableQuantityFactory {
 
     public static Quantity createInch(double value){
         return new Quantity(value, new Inch());
@@ -36,9 +35,5 @@ public class QuantityFactory {
 
     public static Quantity createGrams(double value) {
         return new Quantity(value,new Gram());
-    }
-
-    public static Quantity createCelsius(double value) {
-        return new Quantity(value, new Celsius());
     }
 }

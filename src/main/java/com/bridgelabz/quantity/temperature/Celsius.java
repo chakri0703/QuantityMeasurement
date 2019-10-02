@@ -5,7 +5,7 @@ import com.bridgelabz.quantity.IUnit;
 public class Celsius implements ITemperature {
     @Override
     public double convertToBase(double value) {
-        return 0;
+        return value*1;
     }
 
     @Override
@@ -23,6 +23,6 @@ public class Celsius implements ITemperature {
         if (this==obj){
             return true;
         }
-        return obj instanceof ITemperature;
+        return obj instanceof Celsius;
     }
 }

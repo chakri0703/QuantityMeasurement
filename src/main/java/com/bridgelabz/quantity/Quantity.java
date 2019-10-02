@@ -5,27 +5,27 @@ public class Quantity {
     private IUnit unit;
 
     public static Quantity createFoot(double value) {
-        return QuantityFactory.createFoot(value);
+        return AddableQuantityFactory.createFoot(value);
     }
 
     public static Quantity createInch(double value) {
-        return QuantityFactory.createInch(value);
+        return AddableQuantityFactory.createInch(value);
     }
 
     public static Quantity createYard(double value) {
-        return QuantityFactory.createYard(value);
+        return AddableQuantityFactory.createYard(value);
     }
     public static Quantity createLitre(double value) {
-        return QuantityFactory.createLitre(value);
+        return AddableQuantityFactory.createLitre(value);
     }
 
 
     public static Quantity createGallon(double value) {
-        return QuantityFactory.createGallon(value);
+        return AddableQuantityFactory.createGallon(value);
     }
 
     public static Quantity createKiloGram(double value){
-        return QuantityFactory.createKiloGram(value);
+        return AddableQuantityFactory.createKiloGram(value);
     }
 
     Quantity(double value, IUnit unit){
@@ -34,11 +34,7 @@ public class Quantity {
     }
 
     public static Quantity createGrams(double value) {
-        return  QuantityFactory.createGrams(value);
-    }
-
-    public static Quantity createCelsius(double value){
-        return QuantityFactory.createCelsius(value);
+        return  AddableQuantityFactory.createGrams(value);
     }
 
     @Override

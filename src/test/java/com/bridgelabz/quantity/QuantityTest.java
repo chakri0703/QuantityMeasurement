@@ -619,22 +619,5 @@ public class QuantityTest {
         }
     }
 
-    @Nested
-    class CelsiusEquality{
-        @Test
-        void givenZeroCelsiusAndZeroCelsius_WhenCompare_ThenTheyShouldBeEqual(){
-            Quantity zeroCelsius=createCelsius(0.0);
-            Quantity anotherZero=createCelsius(0.0);
 
-            assertEquals(zeroCelsius,anotherZero);
-        }
-
-        @Test
-        void givenOneAndOneCelsius_WhenCompare_ThenTheyShouldBeEqual(){
-            Quantity zeroCelsius=createCelsius(1.0);
-            Quantity oneCelsius=createCelsius(1.0);
-
-            assertEquals(zeroCelsius,oneCelsius);
-        }
-    }
 }
