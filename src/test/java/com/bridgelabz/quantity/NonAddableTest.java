@@ -90,6 +90,14 @@ public class NonAddableTest {
 
                 assertEquals(thirtyThreeDotEight,oneCelsius);
             }
+
+            @Test
+            void givenZeroCelsiusAndZeroFahrenheit_WhenCompare_ThenTheyShouldBeNotEqual(){
+                NonAddableQuality zeroCelsius=createCelsius(0.0);
+                NonAddableQuality zeroFahren=createFahrenheit(0.0);
+
+                assertNotEquals(zeroCelsius,zeroFahren);
+            }
         }
     }
 }
