@@ -48,10 +48,18 @@ public class NonAddableTest {
 
             @Test
             void givenZeroFahrenheitAndZeroFahrenheit_WhenCompare_ThenTheyShouldBeEqual() {
-                NonAddableQuality zeroFahren = NonAddableQuality.createFahrenheit(0.0);
-                NonAddableQuality anotherZero = NonAddableQuality.createFahrenheit(0.0);
+                NonAddableQuality zeroFahren = createFahrenheit(0.0);
+                NonAddableQuality anotherZero = createFahrenheit(0.0);
 
-                assertEquals(zeroFahren,anotherZero);
+                assertEquals(zeroFahren, anotherZero);
+            }
+
+            @Test
+            void givenOneFahrenAndOneFahren_WhenCompare_ThenTheyShouldBeEqual() {
+                NonAddableQuality oneFahren= createFahrenheit(1.0);
+                NonAddableQuality anotherFahren=createFahrenheit(1.0);
+
+                assertEquals(oneFahren,anotherFahren);
             }
         }
     }
