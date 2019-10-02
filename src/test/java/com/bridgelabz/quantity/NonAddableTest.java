@@ -3,6 +3,8 @@ package com.bridgelabz.quantity;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.awt.image.CropImageFilter;
+
 import static com.bridgelabz.quantity.NonAddableQuality.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -60,6 +62,14 @@ public class NonAddableTest {
                 NonAddableQuality anotherFahren=createFahrenheit(1.0);
 
                 assertEquals(oneFahren,anotherFahren);
+            }
+
+            @Test
+            void givenOneFahrenAndZeroFahren_WhenCompare_ThenTheyShouldBeNotEqual(){
+                NonAddableQuality oneFahren=createFahrenheit(1.0);
+                NonAddableQuality zeroFahren= createFahrenheit(0.0);
+
+                assertNotEquals(oneFahren,zeroFahren);
             }
         }
     }
