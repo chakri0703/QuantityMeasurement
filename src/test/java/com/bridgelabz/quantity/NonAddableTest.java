@@ -72,5 +72,16 @@ public class NonAddableTest {
                 assertNotEquals(oneFahren,zeroFahren);
             }
         }
+
+        @Nested
+        class ComparingCelsiusAndFahrenheit{
+            @Test
+            void given32FahrenheitAndZeroCelsius_WhenCompare_ThenTheyShouldBeEqual(){
+                NonAddableQuality thirtyTwoFahrenheit=createFahrenheit(32.0);
+                NonAddableQuality zeroCelsius=createCelsius(0.0);
+
+                assertEquals(thirtyTwoFahrenheit,zeroCelsius);
+            }
+        }
     }
 }
