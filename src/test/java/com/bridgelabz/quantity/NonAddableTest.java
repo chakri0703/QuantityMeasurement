@@ -45,8 +45,14 @@ public class NonAddableTest {
 
         @Nested
         class FahrenheitTest {
-            NonAddableQuality zeroFahren = NonAddableQuality.createFahrenheit(0.0);
-            NonAddableQuality anotherFahren = NonAddableQuality.createFahrenheit(0.0);
+
+            @Test
+            void givenZeroFahrenheitAndZeroFahrenheit_WhenCompare_ThenTheyShouldBeEqual() {
+                NonAddableQuality zeroFahren = NonAddableQuality.createFahrenheit(0.0);
+                NonAddableQuality anotherZero = NonAddableQuality.createFahrenheit(0.0);
+
+                assertEquals(zeroFahren,anotherZero);
+            }
         }
     }
 }

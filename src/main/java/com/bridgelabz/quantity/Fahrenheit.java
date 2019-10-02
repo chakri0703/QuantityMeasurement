@@ -16,7 +16,7 @@ public class Fahrenheit implements IUnit {
 
     @Override
     public boolean checkBaseUnit(IUnit unit2) {
-        return false;
+        return this.getBaseUnit().equals(unit2.getBaseUnit());
     }
 
     @Override
