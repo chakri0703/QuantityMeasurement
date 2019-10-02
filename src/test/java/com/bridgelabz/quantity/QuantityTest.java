@@ -618,4 +618,15 @@ public class QuantityTest {
             });
         }
     }
+
+    @Nested
+    class CelsiusEquality{
+        @Test
+        void givenZeroCelsiusAndZeroCelsius_WhenCompare_ThenTheyShouldBeEqual(){
+            Quantity zeroCelsius=createCelsius(0.0);
+            Quantity anotherZereo=createCelsius(0.0);
+
+            assertEquals(zeroCelsius,anotherZereo);
+        }
+    }
 }

@@ -10,11 +10,19 @@ public class Celsius implements ITemperature {
 
     @Override
     public IUnit getBaseUnit() {
-        return null;
+        return new Celsius();
     }
 
     @Override
     public boolean checkBaseUnit(IUnit unit2) {
-        return false;
+        return this.getBaseUnit().equals(unit2.getBaseUnit());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this==obj){
+            return true;
+        }
+        return obj instanceof ITemperature;
     }
 }

@@ -37,6 +37,10 @@ public class Quantity {
         return  QuantityFactory.createGrams(value);
     }
 
+    public static Quantity createCelsius(double value){
+        return QuantityFactory.createCelsius(value);
+    }
+
     @Override
     public boolean equals(Object object) {
 
