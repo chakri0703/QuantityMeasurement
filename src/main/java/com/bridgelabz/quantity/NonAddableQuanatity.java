@@ -2,22 +2,22 @@ package com.bridgelabz.quantity;
 
 import com.bridgelabz.quantity.temperature.Celsius;
 
-public class NonAddableQuality {
+public class NonAddableQuanatity {
 
     private final double value;
     private final IUnit unit;
 
-    public NonAddableQuality(double value, IUnit unit) {
+    public NonAddableQuanatity(double value, IUnit unit) {
         this.value = value;
         this.unit = unit;
     }
 
-    public static NonAddableQuality createCelsius(double value) {
-        return new NonAddableQuality(value, new Celsius());
+    public static NonAddableQuanatity createCelsius(double value) {
+        return new NonAddableQuanatity(value, new Celsius());
     }
 
-    public static NonAddableQuality createFahrenheit(double value) {
-        return new NonAddableQuality(value, new Fahrenheit());
+    public static NonAddableQuanatity createFahrenheit(double value) {
+        return new NonAddableQuanatity(value, new Fahrenheit());
     }
 
     @Override
@@ -33,10 +33,10 @@ public class NonAddableQuality {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof NonAddableQuality)) {
+        if (!(obj instanceof NonAddableQuanatity)) {
             return false;
         }
-        NonAddableQuality other = (NonAddableQuality) obj;
+        NonAddableQuanatity other = (NonAddableQuanatity) obj;
         if (!unit.checkBaseUnit(other.unit)) {
             return false;
         }

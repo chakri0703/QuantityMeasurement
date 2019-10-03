@@ -10,31 +10,31 @@ import com.bridgelabz.quantity.weight.KiloGram;
 
 public class AddableQuantityFactory {
 
-    public static Quantity createInch(double value) {
-        return new Quantity(value, new Inch());
+    public static AddableQuantity createInch(double value) {
+        return new AddableQuantity(value, new Inch());
     }
 
-    public static Quantity createFoot(double value) {
-        return new Quantity(value, new Feet());
+    public static AddableQuantity createFoot(double value) {
+        return new AddableQuantity(value, new Feet());
     }
 
-    public static Quantity createYard(double value) {
-        return new Quantity(value, new Yard());
+    public static AddableQuantity createYard(double value) {
+        return new AddableQuantity(value, new Yard());
     }
 
-    public static Quantity createLitre(double value) {
-        return new Quantity(value, new Litre());
+    public static AddableQuantity createLitre(double value) {
+        return new AddableQuantity(value, new Litre());
     }
 
-    public static Quantity createGallon(double value) {
-        return new Quantity(value, new Gallon());
+    public static AddableQuantity createGallon(double value) {
+        return new AddableQuantity(value, new Gallon());
     }
 
-    public static Quantity createKiloGram(double value) {
-        return new Quantity(value, new KiloGram());
+    public static AddableQuantity createKiloGram(double value) {
+        return new AddableQuantity(value, new KiloGram());
     }
 
-    public static Quantity createGrams(double value) {
-        return new Quantity(value, new Gram());
+    public static AddableQuantity createGrams(double value) {
+        return new AddableQuantity(value, new Gram());
     }
 }
